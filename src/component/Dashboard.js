@@ -43,23 +43,26 @@ export default function Dashboard() {
         <>
             <main>
                 <img src={require('../imges/banner.avif')} alt="" className='mt-[50px] w-full bg-cover' />
-                <div className='card mt-[50px]'>
-                    <div className="flex">
-                        {
-                            data.map((item, index) => {
-                                return (
-                                    <Link to={`/book/${item.id}`}>
-                                        <div className='px-[20px] mb-[20px]'>
-                                            <img src={item.img} className='w-[250px] rounded-lg' alt="" />
-                                            <h3 className='mt-[10px] text-[18px] font-[500]'>{item.name}</h3>
-                                            <span className='text-[16px] text-[#666]'>{item.type}</span>
-                                        </div>
+                <div className="container">
 
-                                    </Link>
+                    <div className='card mt-[50px] mx-[-19px]'>
+                        <div className="flex">
+                            {
+                                data.map((item, index) => {
+                                    return (
+                                        <Link to={`/book/${item.id}`}>
+                                            <div className='px-[20px] mb-[20px]'>
+                                                <img src={item.img} className='w-[250px] rounded-lg' alt="" />
+                                                <h3 className='mt-[10px] text-[18px] font-[500]'>{item.name}</h3>
+                                                <span className='text-[16px] text-[#666]'>{item.type}</span>
+                                            </div>
 
-                                )
-                            })
-                        }
+                                        </Link>
+
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </main>

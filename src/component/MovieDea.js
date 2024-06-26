@@ -92,12 +92,14 @@ export default function MovieDea() {
         <div className="container  text-white h-full">
           <div className="flex h-full items-center">
             <div>
-              <img className='h-[392px]' src={movie.img} alt="" />
+              <img className='h-[392px] rounded-lg ' src={movie.img} alt="" />
             </div>
             <div className='ms-[20px]'>
               <h1 className='text-[36px] font-medium'>{movie.name}</h1>
               <div className='text-[16px] font-normal'>
                 {movie.type}
+                <span className='text-[16px] px-[8px]'>•</span>
+                {movie.viewType}
                 <span className='text-[16px] px-[8px]'>•</span>
                 {movie.ua}
                 <span className='text-[16px] px-[8px]'>•</span>
@@ -110,6 +112,10 @@ export default function MovieDea() {
           </div>
 
         </div>
+      </div>
+      <div className="container">
+        <h3 className='text-[24px] mt-[20px] font-medium'>About the movie</h3>
+        <p className='w-[895px] mt-[10px]'>{movie.about}</p>
       </div>
     </>
   )

@@ -2,6 +2,7 @@ import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoMenuOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     return (
@@ -11,7 +12,9 @@ export default function Header() {
                     <div className="flex justify-between py-[15px]">
                         <div className="flex">
                             <div>
-                                <img src={require('../imges/asset 10.jpg')} alt="" className='w-[115px]' />
+                                <Link to={'/'}>
+                                    <img src={require('../imges/asset 10.jpg')} alt="" className='w-[115px]' />
+                                </Link>
                             </div>
                             <div className='flex items-center px-[10px] border-[1px] border-[#eeeeee] ms-[20px] w-[550px]'>
                                 <span><CiSearch /></span>
@@ -31,7 +34,7 @@ export default function Header() {
                     </div>
                 </div>
             </header>
-            
+
         </>
     )
 }
