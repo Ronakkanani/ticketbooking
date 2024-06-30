@@ -32,8 +32,18 @@ export default function Setbook() {
         });
     };
 
-    console.log(selectedSeats.length)
-    const totalPrice = selectedSeats.length * seatPrice;
+    const calculateSeatPrice = (seatIndex) => {
+        const rowIndex = Math.floor(seatIndex / 10);
+        if (rowIndex < 2) {
+            return 600; // First two rows
+        } else if (rowIndex < 8) {
+            return 300; // Second two rows
+        } else {
+            return 100; // Other rows
+        }
+    };
+
+    const totalPrice = selectedSeats.reduce((total, seatIndex) => total + calculateSeatPrice(seatIndex), 0);
 
     return (
         <>
@@ -51,12 +61,17 @@ export default function Setbook() {
                     </div>
                 ))}
             </div>
-            <div className='bg-gray-500 sticky text-white flex items-center bottom-0 w-full h-[60px]' >
+            <div className='bg-gray-500 sticky text-white flex items-center bottom-0 w-full h-[70px]' >
                 <div className="container">
+                    <div className="flex justify-between">
 
-                    <h2 className='text-[18px]'>
-                        Total Price: {totalPrice}
-                    </h2>
+                        <h2 className='text-[18px]'>
+                            Total Price:₹ {totalPrice}
+                        </h2>
+                        <button className='text-[18px] bg-black  rounded-lg px-[12px] py-[5px]'>
+                            pay now
+                        </button>
+                    </div>
                 </div>
             </div>
         </>
